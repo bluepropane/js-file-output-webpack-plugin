@@ -1,6 +1,8 @@
 # JS Output to File Webpack Plugin
 
-Webpack plugin that Useful for generating files like [manifest.json](https://developers.google.com/web/fundamentals/web-app-manifest/).
+Webpack plugin that takes in a JS file and writes its output into a file.
+
+Useful for generating files like [manifest.json](https://developers.google.com/web/fundamentals/web-app-manifest/).
 
 ## Installation
 
@@ -70,8 +72,8 @@ module.exports = env => {
 Running the webpack compiler will yield `dist/manifest.json`:
 
 ```json
-// prettified for example purposes
-// actual JSON output will be minified unless the return value is a string
+// Prettified for example purposes.
+// Actual JSON output will be minified unless the return value is a string.
 {
   "name": "Example manifest",
   "version": "2.0.1",
