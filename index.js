@@ -2,25 +2,21 @@ const path = require('path');
 
 const MATCH_ENDING_JS = /(.js)$/;
 
-class JSFileOutputPlugin {
+class JSOutputFilePlugin {
   constructor(options) {
-    this.fileName = options.fileName;
-    this.context = Object.assign({}, process.env, options.context);
+    this.sourceFile = options.sourceFile;
     this.outputFileName =
-      options.outputFileName || this.fileName.replace(MATCH_ENDING_JS, '');
+      options.outputFileName || this.sourceFile.replace(MATCH_ENDING_JS, '');
   }
   apply(compiler) {
     compiler.hooks.emit.tapAsync(
-      'JSFileOutputPlugin',
+      'JSOutputFilePlugin',
       (compilation, callback) => {
-        console.log(compiler.outputPath);
-        const fileModule = require(path.join(compiler.context, this.fileName));
-        compilation.fileDependencies.add(this.fileName);
-        let payload = fileModule;
-        if (typeof fileModule === 'function') {
-          payload = fileModule(this.context);
+        const exported = require(path.join(compiler.context, this.sourceFile));
+        let payload = exported;
+        if (typeof exported === 'function') {
+          payload = exported(compiler.options.mode);
         }
-
         if (typeof payload !== 'string') {
           payload = JSON.stringify(payload);
         }
@@ -35,4 +31,4 @@ class JSFileOutputPlugin {
   }
 }
 
-module.exports = JSFileOutputPlugin;
+module.exports = JSOutputFilePlugin;
