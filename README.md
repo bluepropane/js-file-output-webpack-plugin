@@ -1,6 +1,6 @@
 # JS Output to File Webpack Plugin
 
-Webpack plugin that takes in a JS file and writes its output into a file.
+Lightweight webpack plugin that takes in a JS file and writes its output into a file.
 
 Useful for generating files like [manifest.json](https://developers.google.com/web/fundamentals/web-app-manifest/).
 
