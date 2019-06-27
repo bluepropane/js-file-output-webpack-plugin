@@ -21,7 +21,7 @@
       "path": "./node_modules/cz-conventional-changelog"
     }
   },
-  "homepage": "https: //github.com/bluepropane/js-output-file-webpack-plugin",
+  "homepage": "https://github.com/bluepropane/js-output-file-webpack-plugin",
   "keywords": [
     "manifest.json",
     "webpack",
