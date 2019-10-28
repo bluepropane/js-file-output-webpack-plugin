@@ -11,11 +11,11 @@ class JSOutputFilePlugin {
   apply(compiler) {
     compiler.hooks.emit.tapAsync(
       'JSOutputFilePlugin',
-      (compilation, callback) => {
+      async (compilation, callback) => {
         const exported = require(path.join(compiler.context, this.sourceFile));
         let payload = exported;
         if (typeof exported === 'function') {
-          payload = exported(compiler.options.mode);
+          payload = await exported(compiler.options.mode);
         }
         if (typeof payload !== 'string') {
           payload = JSON.stringify(payload);
