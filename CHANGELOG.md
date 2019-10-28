@@ -2,6 +2,15 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [2.1.0](https://github.com/bluepropane/js-output-file-webpack-plugin/compare/v2.0.0...v2.1.0) (2019-10-28)
+
+
+### Features
+
+* Use tapAsync; allow spcifying of context path ([b74e6c1](https://github.com/bluepropane/js-output-file-webpack-plugin/commit/b74e6c1))
+
+
+
 ## [2.0.0](https://github.com/bluepropane/js-output-file-webpack-plugin/compare/v1.1.4...v2.0.0) (2019-10-28)
 
 
