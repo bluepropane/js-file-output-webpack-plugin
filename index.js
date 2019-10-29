@@ -6,9 +6,11 @@ class JSOutputFilePlugin {
   constructor(options) {
     this.sourceFile = options.sourceFile;
     this.contextPath = options.contextPath;
+    this.compact = options.compact;
     this.outputFileName =
       options.outputFileName || this.sourceFile.replace(MATCH_ENDING_JS, '');
   }
+
   apply(compiler) {
     compiler.hooks.emit.tapPromise('JSOutputFilePlugin', async compilation => {
       const exported = require(path.join(
@@ -20,7 +22,7 @@ class JSOutputFilePlugin {
         payload = await exported(compiler.options.mode);
       }
       if (typeof payload !== 'string') {
-        payload = JSON.stringify(payload);
+        payload = JSON.stringify(payload, null, this.compact ? null : 2);
       }
 
       compilation.assets[this.outputFileName] = {
