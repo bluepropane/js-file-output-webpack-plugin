@@ -2,6 +2,15 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [2.2.0](https://github.com/bluepropane/js-output-file-webpack-plugin/compare/v2.1.0...v2.2.0) (2019-10-29)
+
+
+### Features
+
+* Allow specifying if parsed JSON should be compact or pretty printed ([dba0850](https://github.com/bluepropane/js-output-file-webpack-plugin/commit/dba0850))
+
+
+
 ## [2.1.0](https://github.com/bluepropane/js-output-file-webpack-plugin/compare/v2.0.0...v2.1.0) (2019-10-28)
 
 
